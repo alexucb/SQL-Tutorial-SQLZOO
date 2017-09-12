@@ -1,0 +1,397 @@
+
+SELECT from WORLD Tutorial
+Language:	English  • 中文
+name	continent	area	population	gdp
+Afghanistan	Asia	652230	25500100	20343000000
+Albania	Europe	28748	2831741	12960000000
+Algeria	Africa	2381741	37100000	188681000000
+Andorra	Europe	468	78115	3712000000
+Angola	Africa	1246700	20609294	100990000000
+...
+
+In this tutorial you will use the SELECT command on the table world:
+
+Contents [hide] 
+1	Introduction
+2	Large Countries
+3	Per capita GDP
+4	South America In millions
+5	France, Germany, Italy
+6	United
+7	Two ways to be big
+8	One or the other (but not both)
+9	Rounding
+10	Trillion dollar economies
+11	Name and capital have the same length
+12	Matching name and capital
+13	All the vowels
+14	What Next
+Introduction
+1.
+Read the notes about this table. Observe the result of running this SQL command to show the name, continent and population of all countries.
+
+
+SELECT name, continent, population FROM world
+Submit SQLRestore default
+Correct answer
+name	continent	population
+Afghanistan	Asia	25500100
+Albania	Europe	2821977
+Algeria	Africa	38700000
+Andorra	Europe	76098
+Angola	Africa	19183590
+Antigua and Barbuda	Caribbean	86295
+Argentina	South America	42669500
+Armenia	Eurasia	3017400
+Australia	Oceania	23545500
+Austria	Europe	8504850
+Azerbaijan	Asia	9477100
+Bahamas	Caribbean	351461
+Bahrain	Asia	1234571
+Bangladesh	Asia	156557000
+Barbados	Caribbean	285000
+Belarus	Europe	9467000
+Belgium	Europe	11198638
+Belize	North America	349728
+Benin	Africa	9988068
+Bhutan	Asia	749090
+Bolivia	South America	10027254
+Bosnia and Herzegovina	Europe	3791622
+Botswana	Africa	2024904
+Brazil	South America	202794000
+Brunei	Asia	393162
+Bulgaria	Europe	7245677
+Burkina Faso	Africa	17322796
+Burundi	Africa	9420248
+Cambodia	Asia	15184116
+Cameroon	Africa	20386799
+Canada	North America	35427524
+Cape Verde	Africa	491875
+Central African Republic	Africa	4709000
+Chad	Africa	13211000
+Chile	South America	17773000
+China	Asia	1365370000
+Colombia	South America	47662000
+Comoros	Africa	743798
+Congo, Democratic Republic of	Africa	69360000
+Congo, Republic of	Africa	4559000
+Costa Rica	North America	4667096
+Côte d'Ivoire	Africa	23919000
+Croatia	Europe	4290612
+Cuba	Caribbean	11167325
+Cyprus	Asia	865878
+Czech Republic	Europe	10517400
+Denmark	Europe	5634437
+Djibouti	Africa	886000
+Dominica	Caribbean	71293
+Dominican Republic	Caribbean	9445281
+Results truncated. Only the first 50 rows have been shown.
+Large Countries
+2.
+How to use WHERE to filter records. Show the name for the countries that have a population of at least 200 million. 200 million is 200000000, there are eight zeros.
+
+
+SELECT name FROM world
+WHERE population >= 200000000
+Submit SQLRestore default
+Correct answer
+name
+Brazil
+China
+India
+Indonesia
+United States
+Per capita GDP
+3.
+Give the name and the per capita GDP for those countries with a population of at least 200 million.
+
+HELP:How to calculate per capita GDP
+
+SELECT name, GDP/population
+FROM world
+Where population >200000000
+Submit SQLRestore default
+
+Correct answer
+name	GDP/populatio..
+Brazil	11115.2648
+China	6121.7106
+India	1504.7931
+Indonesia	3482.0205
+United States	51032.2945
+South America In millions
+4.
+Show the name and population in millions for the countries of the continent 'South America'. Divide the population by 1000000 to get population in millions.
+
+
+SELECT name, population/1000000
+From world
+Where continent = 'South America'
+Submit SQLRestore default
+Correct answer
+name	population/10..
+Argentina	42.6695
+Bolivia	10.0273
+Brazil	202.7940
+Chile	17.7730
+Colombia	47.6620
+Ecuador	15.7742
+Guyana	0.7849
+Paraguay	6.7834
+Peru	30.4751
+Saint Vincent and the Grenadines	0.1090
+Suriname	0.5342
+Uruguay	3.2863
+Venezuela	28.9461
+France, Germany, Italy
+5.
+Show the name and population for France, Germany, Italy
+
+
+select name, population
+from world
+where name IN ('France', 'Germany', 'Italy')
+Submit SQLRestore default
+Correct answer
+name	population
+France	65906000
+Germany	80716000
+Italy	60782668
+United
+6.
+Show the countries which have a name that includes the word 'United'
+
+
+select name
+from world
+where name LIKE '%United%'
+Submit SQLRestore default
+Correct answer
+name
+United Arab Emirates
+United Kingdom
+United States
+Two ways to be big
+7.
+Two ways to be big: A country is big if it has an area of more than 3 million sq km or it has a population of more than 250 million.
+
+Show the countries that are big by area or big by population. Show name, population and area.
+
+
+select name, population, area
+from world
+where area>3000000 or population>250000000
+Submit SQLRestore default
+Correct answer
+name	population	area
+Australia	23545500	7692024
+Brazil	202794000	8515767
+Canada	35427524	9984670
+China	1365370000	9596961
+India	1246160000	3166414
+Indonesia	252164800	1904569
+Russia	146000000	17125242
+United States	318320000	9826675
+One or the other (but not both)
+8.
+Exclusive OR (XOR). Show the countries that are big by area or big by population but not both. Show name, population and area.
+
+Australia has a big area but a small population, it should be included.
+Indonesia has a big population but a small area, it should be included.
+China has a big population and big area, it should be excluded.
+United Kingdom has a small population and a small area, it should be excluded.
+
+select name, population, area
+from world
+where area>3000000 Xor population>250000000
+Submit SQLRestore default
+Correct answer
+name	population	area
+Australia	23545500	7692024
+Brazil	202794000	8515767
+Canada	35427524	9984670
+Indonesia	252164800	1904569
+Russia	146000000	17125242
+Rounding
+9.
+Show the name and population in millions and the GDP in billions for the countries of the continent 'South America'. Use the ROUND function to show the values to two decimal places.
+
+For South America show population in millions and GDP in billions both to 2 decimal places.
+Millions and billions
+
+select name,ROUND( population/1000000, 2), Round(GDP/1000000000,2)
+from world
+where continent='South America'
+Submit SQLRestore default
+Correct answer
+name	ROUND( popula..	Round(GDP/100..
+Argentina	42.67	477.03
+Bolivia	10.03	27.04
+Brazil	202.79	2254.11
+Chile	17.77	268.31
+Colombia	47.66	369.81
+Ecuador	15.77	87.50
+Guyana	0.78	2.85
+Paraguay	6.78	25.94
+Peru	30.48	204.68
+Saint Vincent and the Grenadines	0.11	0.69
+Suriname	0.53	5.01
+Uruguay	3.29	49.92
+Venezuela	28.95	382.42
+Click here to play duplicates game
+Trillion dollar economies
+10.
+Show the name and per-capita GDP for those countries with a GDP of at least one trillion (1000000000000; that is 12 zeros). Round this value to the nearest 1000.
+
+Show per-capita GDP for the trillion dollar countries to the nearest $1000.
+
+
+select name, ROUND(GDP/population, -3)
+FROM world
+WHERE GDP>1000000000000
+Submit SQLRestore default
+Correct answer
+name	ROUND(GDP/pop..
+Australia	66000
+Brazil	11000
+Canada	45000
+China	6000
+France	40000
+Germany	42000
+India	2000
+Italy	33000
+Japan	47000
+Mexico	10000
+Russia	14000
+South Korea	22000
+Spain	28000
+United Kingdom	39000
+United States	51000
+Name and capital have the same length
+11.
+Greece has capital Athens.
+
+Each of the strings 'Greece', and 'Athens' has 6 characters.
+
+Show the name and capital where the name and the capital have the same number of characters.
+
+You can use the LENGTH function to find the number of characters in a string
+
+SELECT name, capital
+FROM world
+WHERE LENGTH(name)=LENGTH(capital)
+Submit SQLRestore default
+Correct answer
+name	capital
+Algeria	Algiers
+Angola	Luanda
+Armenia	Yerevan
+Botswana	Gaborone
+Cameroon	Yaoundé
+Canada	Ottowa
+Djibouti	Djibouti
+Egypt	Cairo
+Estonia	Tallinn
+Fiji	Suva
+Gambia	Banjul
+Georgia	Tbilisi
+Ghana	Accra
+Greece	Athens
+Luxembourg	Luxembourg
+Mauritania	Nouakchott
+Peru	Lima
+Poland	Warsaw
+Russia	Moscow
+Rwanda	Kigali
+San Marino	San Marino
+Singapore	Singapore
+Taiwan	Taipei
+Turkey	Ankara
+Zambia	Lusaka
+Matching name and capital
+12.
+The capital of Sweden is Stockholm. Both words start with the letter 'S'.
+
+Show the name and the capital where the first letters of each match. Don't include countries where the name and the capital are the same word.
+You can use the function LEFT to isolate the first character.
+You can use <> as the NOT EQUALS operator.
+
+SELECT name,  capital
+FROM world
+WHERE LEFT(name,1) = LEFT(capital,1) and name<>capital
+Submit SQLRestore default
+Correct answer
+name	capital
+Algeria	Algiers
+Andorra	Andorra la Vella
+Barbados	Bridgetown
+Belize	Belmopan
+Brazil	Brasília
+Brunei	Bandar Seri Begawan
+Burundi	Bujumbura
+Guatemala	Guatemala City
+Guyana	Georgetown
+Kuwait	Kuwait City
+Maldives	Malé
+Marshall Islands	Majuro
+Mexico	Mexico City
+Monaco	Monaco-Ville
+Mozambique	Maputo
+Niger	Niamey
+Panama	Panama City
+Papua New Guinea	Port Moresby
+Sao Tomé and Príncipe	São Tomé
+South Korea	Seoul
+Sri Lanka	Sri Jayawardenepura Kotte
+Sweden	Stockholm
+Taiwan	Taipei
+Tunisia	Tunis
+All the vowels
+13.
+Equatorial Guinea and Dominican Republic have all of the vowels (a e i o u) in the name. They don't count because they have more than one word in the name.
+
+Find the country that has all the vowels and no spaces in its name.
+
+You can use the phrase name NOT LIKE '%a%' to exclude characters from your results.
+The query shown misses countries like Bahamas and Belarus because they contain at least one 'a'
+
+SELECT name FROM world
+WHERE name LIKE '%a%' AND 
+name  LIKE '%e%' AND 
+name  LIKE '%i%' AND 
+name  LIKE '%o%' AND 
+name  LIKE '%u%' AND 
+name NOT LIKE '% %'
+Submit SQLRestore default
+Correct answer
+name
+Mozambique
+
+What Next
+Click here to play duplicates game
+BBC QUIZ
+You can to continue practising the the same techniques and gain more experience of the basic skills on the Nobel table. The WHERE statement using the nobel table.
+You can learn about nested statements, these are instructive and entertaining, but not essential for beginners. Nested SELECT statements using the world table.
+Navigation menu
+SELECT basics
+quiz
+SELECT from world
+quiz
+SELECT from nobel
+quiz
+SELECT in SELECT
+quiz
+SUM and COUNT
+quiz
+JOIN
+quiz
+More JOIN
+quiz
+Using NULL
+quiz
+Self JOIN
+quiz
+Reference
+Tools
+This page was last modified on 22 August 2017, at 13:23.
+Privacy policyAbout SQLZOODisclaimersPowered by MediaWiki
