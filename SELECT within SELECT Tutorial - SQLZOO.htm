@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial -->
+<html class="client-js" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?_=1506363178372"></script>
+
+<title>SELECT within SELECT Tutorial - SQLZOO</title>
+<script async="" src="./SELECT within SELECT Tutorial - SQLZOO_files/analytics.js"></script><script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SELECT_within_SELECT_Tutorial","wgTitle":"SELECT within SELECT Tutorial","wgCurRevisionId":39085,"wgRevisionId":39085,"wgArticleId":21,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SELECT_within_SELECT_Tutorial","wgRelevantArticleId":21,"wgRequestId":"Wck7X4pJebuwu16lS5kuGgAAAAI","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","ext.embedVideo.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@0o3eimo",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.embedVideo","mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./SELECT within SELECT Tutorial - SQLZOO_files/load.php">
+<script async="" src="./SELECT within SELECT Tutorial - SQLZOO_files/load(1).php"></script>
+<style>
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./SELECT within SELECT Tutorial - SQLZOO_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.28.0">
+<link rel="shortcut icon" href="http://sqlzoo.net/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://sqlzoo.net/w/opensearch_desc.php" title="SQLZOO (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://sqlzoo.net/w/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="SQLZOO Atom feed" href="http://sqlzoo.net/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-33860668-1', 'auto');
+ga('send', 'pageview');
+</script><style rel="stylesheet">.ans{display:none;}</style>
+<script src="./SELECT within SELECT Tutorial - SQLZOO_files/load(3).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SELECT_within_SELECT_Tutorial rootpage-SELECT_within_SELECT_Tutorial skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+ 		<div id="mw-head-base" class="noprint">
+
+    </div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">SELECT within SELECT Tutorial</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From SQLZOO</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#mw-head">navigation</a>, 					<a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This tutorial looks at how we can use SELECT statements within SELECT statements to perform more complex queries.
+</p>
+<div class="ref_section">
+<table class="db_ref">
+<tbody><tr><th>name</th><th>continent</th><th>area</th>
+<th>population</th><th>gdp</th></tr>
+<tr><td>Afghanistan</td><td>Asia</td><td class="r">652230</td><td class="r">25500100</td><td class="r">20343000000</td></tr>
+<tr><td>Albania</td><td>Europe</td><td class="r">28748	</td><td class="r">2831741	</td><td class="r">12960000000	</td></tr>
+<tr><td>Algeria</td><td>Africa</td><td class="r">2381741	</td><td class="r">37100000	</td><td class="r">188681000000	</td></tr>
+<tr><td>Andorra</td><td>Europe</td><td class="r">468</td><td class="r">78115	</td><td class="r">3712000000	</td></tr><tr>
+<td>Angola</td><td>Africa</td><td class="r">1246700	</td><td class="r">20609294	</td><td class="r">100990000000	</td></tr>
+<tr>
+<td colspan="5">...</td>
+</tr>
+</tbody></table>
+</div>
+<p><a href="http://sqlzoo.net/wiki/Using_nested_SELECT" title="Using nested SELECT">Using nested SELECT</a>
+</p>
+<div class="progress_panel"><div>
+   <div class="summary">Summary</div>
+   <div class="progressbarbg">
+     <div class="progressbar"></div>
+   </div>
+</div></div>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Exercises"><span class="tocnumber">1</span> <span class="toctext">Exercises</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Bigger_than_Russia"><span class="tocnumber">2</span> <span class="toctext">Bigger than Russia</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Richer_than_UK"><span class="tocnumber">3</span> <span class="toctext">Richer than UK</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Neighbours_of_Argentina_and_Australia"><span class="tocnumber">4</span> <span class="toctext">Neighbours of Argentina and Australia</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Between_Canada_and_Poland"><span class="tocnumber">5</span> <span class="toctext">Between Canada and Poland</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Percentages_of_Germany"><span class="tocnumber">6</span> <span class="toctext">Percentages of Germany</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Bigger_than_every_country_in_Europe"><span class="tocnumber">7</span> <span class="toctext">Bigger than every country in Europe</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Largest_in_each_continent"><span class="tocnumber">8</span> <span class="toctext">Largest in each continent</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#First_country_of_each_continent_.28alphabetically.29"><span class="tocnumber">9</span> <span class="toctext">First country of each continent (alphabetically)</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#Difficult_Questions_That_Utilize_Techniques_Not_Covered_In_Prior_Sections"><span class="tocnumber">10</span> <span class="toctext">Difficult Questions That Utilize Techniques Not Covered In Prior Sections</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Exercises">Exercises</span></h2>
+<h2><span class="mw-headline" id="Bigger_than_Russia">Bigger than Russia</span></h2>
+<div class="qu zood">
+
+
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">1.</span><p class="imper">List each country <b>name</b> where the <b>population</b> is larger than that of 'Russia'. </p><pre>world(name, continent, area, population, gdp)</pre><p><br>
+</p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;</span>
+     <span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span>
+      <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Romania'</span><span class="p">)</span>
+</pre></div><form name="frm__1" id="frm__1"><div class="quf"><textarea spellcheck="false" rows="7" cols="47" class="sql" id="txtar_1"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;</span>
+     <span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span>
+      <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Russia'</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<div class="embedvideo autoResize" style=""><div class="embedvideowrap" style="width: 640px;"><iframe src="./SELECT within SELECT Tutorial - SQLZOO_files/UPFwlsJFcsw.html" width="640" height="360" frameborder="0" allowfullscreen="true"></iframe></div></div>
+<h2><span class="mw-headline" id="Richer_than_UK">Richer than UK</span></h2>
+<div class="qu zood">
+
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">2.</span><p class="imper">Show the countries in Europe with a per capita GDP greater than 'United Kingdom'.</p><div class="tease">Per Capita GDP</div><div class="hint" title="Per Capita GDP" style="display: none;">The per capita GDP is the gdp/population</div><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__2" id="frm__2"><div class="quf"><textarea spellcheck="false" rows="7" cols="49" class="sql" id="txtar_2"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">continent</span><span class="o">=</span><span class="s1">'Europe'</span> <span class="k">AND</span> <span class="n">gdp</span><span class="o">/</span><span class="n">population</span> <span class="o">&gt;</span>
+     <span class="p">(</span><span class="k">SELECT</span> <span class="n">gdp</span><span class="o">/</span><span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span>
+      <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'United Kingdom'</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<div class="embedvideo autoResize" style=""><div class="embedvideowrap" style="width: 640px;"><iframe src="./SELECT within SELECT Tutorial - SQLZOO_files/RELAqb4DlvY.html" width="640" height="360" frameborder="0" allowfullscreen="true"></iframe></div></div>
+<h2><span class="mw-headline" id="Neighbours_of_Argentina_and_Australia">Neighbours of Argentina and Australia</span></h2>
+<div class="qu zood">
+
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">3.</span><p><span class="param respectorder"></span>
+</p><p class="imper">List the <b>name</b> and <b>continent</b> of countries in the continents containing either <b>Argentina</b> or <b>Australia</b>. Order by name of the country.</p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__3" id="frm__3"><div class="quf"><textarea spellcheck="false" rows="10" cols="47" class="sql" id="txtar_3"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">continent</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">continent</span> <span class="k">IN</span> <span class="p">(</span>
+  <span class="k">SELECT</span> <span class="n">continent</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+  <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">'Australia'</span><span class="p">,</span><span class="s1">'Argentina'</span><span class="p">))</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">name</span>
+</pre></div></div><div class="res">result</div></div>
+<h2><span class="mw-headline" id="Between_Canada_and_Poland">Between Canada and Poland</span></h2>
+<div class="qu zood">
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">4.</span><p class="imper">Which country has a population that is more than Canada but less than Poland? Show the name and the population.</p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__4" id="frm__4"><div class="quf"><textarea spellcheck="false" rows="8" cols="54" class="sql" id="txtar_4"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">population</span> <span class="k">BETWEEN</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span><span class="o">+</span><span class="mi">1</span> <span class="k">FROM</span> <span class="n">world</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Canada'</span><span class="p">)</span>
+<span class="k">AND</span>
+<span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span><span class="o">-</span><span class="mi">1</span> <span class="k">FROM</span> <span class="n">world</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Poland'</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<h2><span class="mw-headline" id="Percentages_of_Germany">Percentages of Germany</span></h2>
+<div class="qu zood">
+
+
+
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">5.</span><p>Germany (population 80 million) has the largest population of the countries in Europe. Austria (population 8.5 million) has 11% of the population of Germany.
+</p><p class="imper">Show the name and the population of each country in Europe. Show the population as a percentage of the population of Germany.</p><div class="tease">Decimal places</div><div class="hint" title="Decimal places" style="display: none;">You can use the function <a href="http://sqlzoo.net/wiki/ROUND" title="ROUND">ROUND</a> to remove the decimal places.</div><div class="tease">Percent symbol&nbsp;%</div><div class="hint" title="Percent symbol %" style="display: none;">You can use the function <a href="http://sqlzoo.net/wiki/CONCAT" title="CONCAT">CONCAT</a> to add the percentage symbol.</div><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__5" id="frm__5"><div class="quf"><textarea spellcheck="false" rows="7" cols="90" class="sql" id="txtar_5"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span>
+   <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">population</span><span class="o">/</span><span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">'Germany'</span><span class="p">)),</span><span class="s1">'%'</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">world</span>
+<span class="k">WHERE</span> <span class="n">continent</span><span class="o">=</span><span class="s1">'Europe'</span>
+</pre></div></div><div class="res">result</div></div>
+<div class="embedvideo autoResize" style=""><div class="embedvideowrap" style="width: 640px;"><iframe src="./SELECT within SELECT Tutorial - SQLZOO_files/lCbLvHUNBG4.html" width="640" height="360" frameborder="0" allowfullscreen="true"></iframe></div></div>
+<p><br>
+<a href="http://sqlzoo.net/wiki/SUM_and_COUNT" title="SUM and COUNT">To get a well rounded view of the important features of SQL you should move on to the next tutorial concerning aggregates.</a>
+</p><p>To gain an absurdly detailed view of one insignificant feature of the language, read on.
+</p><p>We can use the word <code>ALL</code> to allow &gt;= or &gt; or &lt; or &lt;=to act over a list. For example, you can find the largest country in the world, by population with this query:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span>
+  <span class="k">FROM</span> <span class="n">world</span>
+ <span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;=</span> <span class="k">ALL</span><span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span>
+                           <span class="k">FROM</span> <span class="n">world</span>
+                          <span class="k">WHERE</span> <span class="n">population</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<p>You need the condition <b>population&gt;0</b> in the sub-query as some countries have <b>null</b> for population.
+</p>
+<h2><span class="mw-headline" id="Bigger_than_every_country_in_Europe">Bigger than every country in Europe</span></h2>
+<div class="qu zood">
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">6.</span><p class="imper">Which countries have a GDP greater than every country in Europe? [Give the <b>name</b> only.] (Some countries may have NULL gdp values) </p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__6" id="frm__6"><div class="quf"><textarea spellcheck="false" rows="8" cols="47" class="sql" id="txtar_6"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span> 
+  <span class="k">WHERE</span> <span class="n">gdp</span> <span class="o">&gt;</span> <span class="k">ALL</span>
+   <span class="p">(</span><span class="k">SELECT</span> <span class="n">gdp</span> <span class="k">FROM</span> <span class="n">world</span>
+    <span class="k">WHERE</span> <span class="n">continent</span> <span class="o">=</span> <span class="s1">'Europe'</span> 
+      <span class="k">AND</span> <span class="n">gdp</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<p>We can refer to values in the outer SELECT within the inner SELECT. We can name the tables so that we can tell the difference between the inner and outer versions.
+</p>
+<h2><span class="mw-headline" id="Largest_in_each_continent">Largest in each continent</span></h2>
+<div class="qu zood">
+
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">7.</span><p class="imper">Find the largest country (by area) in each continent, show the <b>continent</b>, the <b>name</b> and the <b>area</b>: </p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">continent</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">x</span>
+  <span class="k">WHERE</span> <span class="n">population</span> <span class="o">&gt;=</span> <span class="k">ALL</span>
+    <span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">y</span>
+        <span class="k">WHERE</span> <span class="n">y</span><span class="p">.</span><span class="n">continent</span><span class="o">=</span><span class="n">x</span><span class="p">.</span><span class="n">continent</span>
+          <span class="k">AND</span> <span class="n">population</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</pre></div><form name="frm__7" id="frm__7"><div class="quf"><textarea spellcheck="false" rows="9" cols="49" class="sql" id="txtar_7"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">continent</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">area</span> 
+ <span class="k">FROM</span> <span class="n">world</span> <span class="n">x</span>
+  <span class="k">WHERE</span> <span class="n">area</span> <span class="o">&gt;=</span> <span class="k">ALL</span>
+    <span class="p">(</span><span class="k">SELECT</span> <span class="n">area</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">y</span>
+        <span class="k">WHERE</span> <span class="n">y</span><span class="p">.</span><span class="n">continent</span><span class="o">=</span><span class="n">x</span><span class="p">.</span><span class="n">continent</span>
+         <span class="k">and</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span>
+</pre></div><p>The above example is known as a <b>correlated</b> or <b>synchronized</b> sub-query.
+</p></div><div class="res">result</div></div>
+<h2><span class="mw-headline" id="First_country_of_each_continent_.28alphabetically.29">First country of each continent (alphabetically)</span></h2>
+<div class="qu zood">
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">8.</span><p class="imper">List each continent and the name of the country that comes first alphabetically.</p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__8" id="frm__8"><div class="quf"><textarea spellcheck="false" rows="7" cols="47" class="sql" id="txtar_8"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">continent</span><span class="p">,</span><span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">x</span>
+  <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">name</span> <span class="o">&lt;=</span> <span class="k">ALL</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">name</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">y</span>
+     <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">continent</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">continent</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<h2><span class="mw-headline" id="Difficult_Questions_That_Utilize_Techniques_Not_Covered_In_Prior_Sections">Difficult Questions That Utilize Techniques Not Covered In Prior Sections</span></h2>
+<div class="qu zood">
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">9.</span><p class="imper">Find the continents where all countries have a population &lt;= 25000000.  Then find the names of the countries associated with these continents. Show <b>name</b>, <b>continent</b> and <b>population</b>. </p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__9" id="frm__9"><div class="quf"><textarea spellcheck="false" rows="8" cols="47" class="sql" id="txtar_9"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">continent</span><span class="p">,</span><span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">x</span>
+  <span class="k">WHERE</span> <span class="mi">25000000</span> <span class="o">&gt;=</span> <span class="k">ALL</span> <span class="p">(</span>
+    <span class="k">SELECT</span> <span class="n">population</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">y</span>
+     <span class="k">WHERE</span> <span class="n">x</span><span class="p">.</span><span class="n">continent</span><span class="o">=</span><span class="n">y</span><span class="p">.</span><span class="n">continent</span>
+       <span class="k">AND</span> <span class="n">y</span><span class="p">.</span><span class="n">population</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<div class="qu zood">
+
+
+
+<div><div class="qcorrect" title="You have answered this question correctly." style=""></div><span class="id">10.</span><p class="imper">Some countries have populations more than three times that of any of their neighbours (in the same continent). Give the countries and continents.</p><div class="def mw-highlight mw-content-ltr" dir="ltr"><pre></pre></div><form name="frm__10" id="frm__10"><div class="quf"><textarea spellcheck="false" rows="8" cols="47" class="sql" id="txtar_10"></textarea><button class="submitSQL">Submit SQL</button><div class="reset">Restore default</div></div></form><div class="ans mw-highlight mw-content-ltr" dir="ltr"><pre><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span> <span class="n">continent</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">x</span> <span class="k">WHERE</span>
+ <span class="n">population</span> <span class="o">&gt;</span> <span class="k">ALL</span>
+ <span class="p">(</span><span class="k">SELECT</span> <span class="n">population</span><span class="o">*</span><span class="mi">3</span> <span class="k">FROM</span> <span class="n">world</span> <span class="n">y</span>
+ <span class="k">WHERE</span> <span class="n">y</span><span class="p">.</span><span class="n">continent</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">continent</span>
+ <span class="k">AND</span> <span class="n">y</span><span class="p">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">x</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div></div><div class="res">result</div></div>
+<div>
+<p></p><div class="quizlink"><a href="http://sqlzoo.net/wiki/Nested_SELECT_Quiz" title="Nested SELECT Quiz">Nested SELECT Quiz</a></div><p></p>
+</div>
+
+<!-- 
+NewPP limit report
+Cached time: 20170925163621
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.102 seconds
+Real time usage: 3.232 seconds
+Preprocessor visited node count: 272/1000000
+Preprocessor generated node count: 632/1000000
+Post‐expand include size: 80/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key sqlzoo_wiki:pcache:idhash:21-0!*!0!!en!*!* and timestamp 20170925163618 and revision id 39085
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;oldid=39085">http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;oldid=39085</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+													</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															
+															
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															
+															
+															
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label" style="">
+						<h3 id="p-cactions-label" tabindex="0"><span></span><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										
+									</div>
+			<div id="cog-cont"><div title="Wiki Controls" id="cog" style="background-image: url(&quot;/design/Cog_font_awesome.svg&quot;); z-index: 1003; width: 32px; height: 32px; position: absolute; right: 0px; top: 0px;"></div><ul id="coglist" style="z-index: 1003; display: none;"><li><div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="http://sqlzoo.net/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search SQLZOO" title="Search SQLZOO [ctrl-option-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div></li><li id="pt-createaccount"><a href="http://sqlzoo.net/w/index.php?title=Special:CreateAccount&amp;returnto=SELECT+within+SELECT+Tutorial" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pick-engine"><span id="engineTxt"><span>SQL Engine: </span><select id="engine"><option value="mysql">MySQL</option><option value="oracle">Oracle</option><option value="mssql">SQL Server</option></select></span></li><li id="pt-login"><a href="http://sqlzoo.net/w/index.php?title=Special:UserLogin&amp;returnto=SELECT+within+SELECT+Tutorial" title="You are encouraged to log in; however, it is not mandatory [ctrl-option-o]" accesskey="o">Log in</a></li><li id="ca-view" class="selected collapsible"><span><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial">Read</a></span></li><li id="ca-viewsource" class="collapsible"><span><a href="http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;action=edit" title="This page is protected.
+You can view its source [ctrl-option-e]" accesskey="e">View source</a></span></li><li id="ca-history" class="collapsible"><span><a href="http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;action=history" title="Past revisions of this page [ctrl-option-h]" accesskey="h">View history</a></span></li><li id="ca-nstab-main" class="selected"><span><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial" title="View the content page [ctrl-option-c]" accesskey="c">Page</a></span></li><li id="ca-talk"><span><a href="http://sqlzoo.net/wiki/Talk:SELECT_within_SELECT_Tutorial" title="Discussion about the content page [ctrl-option-t]" accesskey="t" rel="discussion">Discussion</a></span></li></ul></div></div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://sqlzoo.net/wiki/SQL_Tutorial" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-" aria-labelledby="p--label">
+			<h3 id="p--label"></h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-SELECT-basics"><a href="http://sqlzoo.net/wiki/SELECT_basics">SELECT basics</a><div class="progressbarbg1" title="Completed 1 of 3"><div class="progressbar1" style="width: 1.36667ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/SELECT_Quiz">quiz</a><div class="progressbarbg1" title="Completed 7 of 7"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-SELECT-from-world"><a href="http://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial">SELECT from world</a><div class="progressbarbg1" title="Completed 6 of 6"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/BBC_QUIZ">quiz</a><div class="progressbarbg1" title="Completed 0 of 7"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-SELECT-from-nobel"><a href="http://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial">SELECT from nobel</a><div class="progressbarbg1" title="Completed 8 of 8"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/Nobel_Quiz">quiz</a><div class="progressbarbg1" title="Completed 7 of 7"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-SELECT-in-SELECT"><a href="http://sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial">SELECT in SELECT</a><div class="progressbarbg1" title="Completed 8 of 8"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/Nested_SELECT_Quiz">quiz</a><div class="progressbarbg1" title="Completed 7 of 7"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-SUM-and-COUNT"><a href="http://sqlzoo.net/wiki/SUM_and_COUNT">SUM and COUNT</a><div class="progressbarbg1" title="Completed 8 of 8"><div class="progressbar1" style="width: 4.1ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/SUM_and_COUNT_Quiz">quiz</a><div class="progressbarbg1" title="Completed 0 of 8"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-JOIN"><a href="http://sqlzoo.net/wiki/The_JOIN_operation">JOIN</a><div class="progressbarbg1" title="Completed 0 of 13"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/JOIN_Quiz">quiz</a><div class="progressbarbg1" title="Completed 0 of 7"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-More-JOIN"><a href="http://sqlzoo.net/wiki/More_JOIN_operations">More JOIN</a><div class="progressbarbg1" title="Completed 0 of 16"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/JOIN_Quiz_2">quiz</a><div class="progressbarbg1" title="Completed 0 of 7"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-Using-NULL"><a href="http://sqlzoo.net/wiki/Using_Null">Using NULL</a><div class="progressbarbg1" title="Completed 0 of 10"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/Using_Null_Quiz">quiz</a><div class="progressbarbg1" title="Completed 0 of 6"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-Self-JOIN"><a href="http://sqlzoo.net/wiki/Self_join">Self JOIN</a><div class="progressbarbg1" title="Completed 0 of 10"><div class="progressbar1" style="width: 0ex;"></div></div></li><li id="n-quiz"><a href="http://sqlzoo.net/wiki/Self_join_Quiz">quiz</a><div class="progressbarbg1" title="Completed 0 of 3"><div class="progressbar1" style="width: 0ex;"></div></div></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-Reference" aria-labelledby="p-Reference-label">
+			<h3 id="p-Reference-label">Reference</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-SELECT"><a href="http://sqlzoo.net/wiki/SELECT">SELECT</a></li><li id="n-Functions"><a href="http://sqlzoo.net/wiki/FUNCTIONS">Functions</a></li><li id="n-SELECT-..-WHERE"><a href="http://sqlzoo.net/wiki/SELECT_.._WHERE">SELECT .. WHERE</a></li><li id="n-SELECT-..-GROUP-BY"><a href="http://sqlzoo.net/wiki/SELECT_.._GROUP_BY">SELECT .. GROUP BY</a></li><li id="n-SELECT-..-JOIN"><a href="http://sqlzoo.net/wiki/SELECT_.._JOIN">SELECT .. JOIN</a></li><li id="n-SELECT-..-SELECT"><a href="http://sqlzoo.net/wiki/SELECT_.._SELECT">SELECT .. SELECT</a></li><li id="n-INSERT-..-VALUES"><a href="http://sqlzoo.net/wiki/INSERT_.._VALUES">INSERT .. VALUES</a></li><li id="n-INSERT-..-SELECT"><a href="http://sqlzoo.net/wiki/INSERT_.._SELECT">INSERT .. SELECT</a></li><li id="n-UPDATE"><a href="http://sqlzoo.net/wiki/UPDATE">UPDATE</a></li><li id="n-DELETE"><a href="http://sqlzoo.net/wiki/DELETE">DELETE</a></li><li id="n-CREATE-TABLE"><a href="http://sqlzoo.net/wiki/CREATE_TABLE">CREATE TABLE</a></li><li id="n-CREATE-VIEW"><a href="http://sqlzoo.net/wiki/CREATE_VIEW">CREATE VIEW</a></li><li id="n-CREATE-INDEX"><a href="http://sqlzoo.net/wiki/CREATE_INDEX">CREATE INDEX</a></li><li id="n-DROP"><a href="http://sqlzoo.net/wiki/DROP">DROP</a></li><li id="n-ALTER"><a href="http://sqlzoo.net/wiki/ALTER">ALTER</a></li><li id="n-UNION"><a href="http://sqlzoo.net/wiki/UNION">UNION</a></li><li id="n-LEFT-JOIN"><a href="http://sqlzoo.net/wiki/LEFT_JOIN">LEFT JOIN</a></li><li id="n-NULL"><a href="http://sqlzoo.net/wiki/NULL">NULL</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="http://sqlzoo.net/wiki/Special:WhatLinksHere/SELECT_within_SELECT_Tutorial" title="A list of all wiki pages that link here [ctrl-option-j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://sqlzoo.net/wiki/Special:RecentChangesLinked/SELECT_within_SELECT_Tutorial" rel="nofollow" title="Recent changes in pages linked from this page [ctrl-option-k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="http://sqlzoo.net/wiki/Special:SpecialPages" title="A list of all special pages [ctrl-option-q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;printable=yes" rel="alternate" title="Printable version of this page [ctrl-option-p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;oldid=39085" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://sqlzoo.net/w/index.php?title=SELECT_within_SELECT_Tutorial&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo"><ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-0803888854272698" data-ad-slot="2184001182" data-ad-format="auto"></ins>
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 September 2017, at 10:11.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://sqlzoo.net/wiki/SQLZOO:Privacy_policy" title="SQLZOO:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://sqlzoo.net/wiki/SQLZOO:About" title="SQLZOO:About">About SQLZOO</a></li>
+											<li id="footer-places-disclaimer"><a href="http://sqlzoo.net/wiki/SQLZOO:General_disclaimer" title="SQLZOO:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="./SELECT within SELECT Tutorial - SQLZOO_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":54});});</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
